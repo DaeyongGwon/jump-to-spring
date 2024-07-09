@@ -1,4 +1,4 @@
-package com.mysite.sbb;
+package com.mysite.sbb.question;
 
 public interface QuestionSubject {
     String getSubject();
