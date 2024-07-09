@@ -18,14 +18,24 @@ repositories {
 }
 
 dependencies {
+
+  //DB
     // 클라우드 db 연결
     implementation 'com.oracle.database.jdbc:ojdbc11:23.3.0.23.09'
     implementation 'com.oracle.database.security:oraclepki:23.4.0.24.05'
     implementation 'com.oracle.database.jdbc:ucp11:23.3.0.23.09'
+    // h2
+    runtimeOnly 'com.h2database:h2'
+    // log4jdbc
+    implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
 
+    // 스프링 부트
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // 타임리프
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+    // 테스트
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // JUnit
     testImplementation 'org.junit.jupiter:junit-jupiter'
@@ -35,8 +45,7 @@ dependencies {
     // lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    runtimeOnly 'com.h2database:h2'
-    implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+
 
 
 }
