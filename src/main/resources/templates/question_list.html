@@ -1,10 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<html layout:decorate="~{layout}"><div layout:fragment="content" class="container my-3">	<table class="table">		<thead class="table-dark">		<tr>			<th>번호</th>			<th>제목</th>			<th>작성일시</th>		</tr>		</thead>		<tbody>		<tr th:each="question, loop : ${questionList}">			<td th:text="${loop.count}"></td>			<td>				<a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>			</td>			<td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>		</tr>		</tbody>	</table>	<a th:href="@{/question/create}" class="btn btn-primary">질문 등록하기</a>	<div>		<br/>		<a href="http://192.168.210.63:8080/question/list" class="btn btn-danger">찬희</a>		<a href="http://192.168.210.82:80/question/list" class="btn btn-info">하린</a>		<a href="http://192.168.210.64:80/question/list" class="btn btn-warning">원석</a>	</div></div></html>
